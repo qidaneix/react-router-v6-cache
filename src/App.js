@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CacheOutlet } from "./utils/CacheOutlet";
+import { CacheOutlets } from "./utils/CacheOutlets";
 import "./App.css";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <Link to="/invoices">Invoices</Link>&nbsp;&nbsp;
         <Link to="/expenses">Expenses</Link>
       </nav>
-      <CacheOutlet context={"quux"} />
+      <CacheOutlets context={"quux"} />
     </div>
   );
 }

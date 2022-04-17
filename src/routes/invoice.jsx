@@ -7,6 +7,8 @@ export default function Invoice() {
     <>
       <h2>Invoice {params.id}</h2>
       <h5>{baz}</h5>
+      子元素非受控：
+      <input type="text" />
     </>
   );
 }

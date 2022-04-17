@@ -1,6 +1,6 @@
 import { Link, useOutletContext } from "react-router-dom";
 import { getInvoices } from "../data";
-import { CacheOutlet } from "../utils/CacheOutlet";
+import { CacheOutlets } from "../utils/CacheOutlets";
 
 export default function Invoices() {
   const invoices = getInvoices();
@@ -8,7 +8,12 @@ export default function Invoices() {
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Invoices</h2>
+      <Link to="/invoices/123">Expenses 123</Link>&nbsp;&nbsp;
+      <Link to="/invoices/foo">Expenses foo</Link>&nbsp;&nbsp;
+      <Link to="/invoices/bar">Expenses bar</Link>
       <h4>{quux}</h4>
+      非受控：
+      <input type="text" />
       <div style={{ display: "flex" }}>
         <nav
           style={{
@@ -27,7 +32,7 @@ export default function Invoices() {
           ))}
         </nav>
       </div>
-      <CacheOutlet context="baz" />
+      <CacheOutlets context="baz" />
     </main>
   );
 }
