@@ -3,15 +3,17 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
+import Bpp from "./Bpp";
 import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
+import { CacheRoutes } from "./utils/CacheRoutes";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
+      <CacheRoutes>
         <Route path="/" element={<App />}>
           <Route path="expenses" element={<Expenses />} />
           <Route path="invoices" element={<Invoices />}>
@@ -26,7 +28,8 @@ ReactDOM.render(
             }
           />
         </Route>
-      </Routes>
+        <Route path="/bpp" element={<Bpp />} />
+      </CacheRoutes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

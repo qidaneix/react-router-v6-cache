@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
-import { CacheOutlets } from "./utils/CacheOutlets";
 import "./App.css";
 
-function App() {
+function Bpp() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <h1>Hello world Bpp</h1>
       <nav style={{ border: "1px solid black", paddingBottom: "1rem" }}>
         <Link to="/invoices">Invoices</Link>&nbsp;&nbsp;
         <Link to="/expenses">Expenses</Link>&nbsp;&nbsp;
-        <Link to="/bpp">BPP</Link>
+        <Link to="/">APP</Link>
       </nav>
-      <CacheOutlets context={"quux"} />
+      <input type="text" />
     </div>
   );
 }
 
-export default App;
+export default Bpp;

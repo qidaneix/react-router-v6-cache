@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import { Freeze } from "react-freeze";
 
 export default function Expenses() {
   const [text, setText] = useState("");
+  const [count, setCount] = useState(0);
   const quux = useOutletContext();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  }, []);
+
   return (
     <main style={{ padding: "1rem 0" }}>
       <h2>Expenses</h2>
@@ -16,7 +23,8 @@ export default function Expenses() {
           setText(e.target.value);
         }}
       />
-      <p>{text}</p>
+      <p>text: {text}</p>
+      <p>count: {count}</p>
     </main>
   );
 }

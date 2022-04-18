@@ -1,13 +1,17 @@
-import { useOutlet, useLocation } from "react-router-dom";
+import {
+  useRoutes,
+  createRoutesFromChildren,
+  useLocation,
+} from "react-router-dom";
 import { useRef } from "react";
 import { Freeze } from "react-freeze";
 
-export function useCacheOutlets(context) {
+export function useCacheRoutes({ children, location }) {
   const { pathname, search, hash } = useLocation();
   const theKey = pathname + search + hash;
 
   const cacheRef = useRef({});
-  const currentOutlet = useOutlet(context);
+  const currentOutlet = useRoutes(createRoutesFromChildren(children), location);
 
   if (!Object.prototype.hasOwnProperty.call(cacheRef.current, theKey)) {
     cacheRef.current[theKey] = currentOutlet;
@@ -29,6 +33,6 @@ export function useCacheOutlets(context) {
   );
 }
 
-export function CacheOutlets({ context }) {
-  return useCacheOutlets(context);
+export function CacheRoutes({ children, location }) {
+  return useCacheRoutes({ children, location });
 }
