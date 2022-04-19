@@ -2,14 +2,14 @@ import { useOutlet, OutletProps } from "react-router-dom";
 import React from "react";
 import { useCreateCache } from "./CreateCache.tsx";
 
-export function useCacheOutlets(context?: unknown): React.ReactElement | null {
+export function useCacheOutlet(context?: unknown): React.ReactElement | null {
   const currentOutlet = useOutlet(context);
 
   return useCreateCache(currentOutlet);
 }
 
-export function CacheOutlets({
+export function CacheOutlet({
   context,
 }: OutletProps): React.ReactElement | null {
-  return useCacheOutlets(context);
+  return useCacheOutlet(context);
 }

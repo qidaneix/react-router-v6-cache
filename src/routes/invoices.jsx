@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { getInvoices } from "../data/index";
-import { CacheOutlets } from "../utils/CacheOutlets.tsx";
+import { CacheOutlet } from "../utils/CacheOutlet.tsx";
 
 export default function Invoices() {
   const invoices = getInvoices();
@@ -26,7 +26,7 @@ export default function Invoices() {
             </Link>
           ))}
         </nav>
-        <CacheOutlets />
+        <CacheOutlet />
       </div>
     </main>
   );
