@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./App.css";
 
 function Bpp() {
   return (
@@ -10,7 +9,10 @@ function Bpp() {
         <Link to="/expenses">Expenses</Link>&nbsp;&nbsp;
         <Link to="/">APP</Link>
       </nav>
-      <input type="text" />
+      <p>
+        Bpp 非受控组件：
+        <input type="text" />
+      </p>
     </div>
   );
 }

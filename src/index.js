@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Bpp from "./Bpp";
 import Expenses from "./routes/expenses";
 import Invoices from "./routes/invoices";
 import Invoice from "./routes/invoice";
-import { CacheRoutes } from "./utils/CacheRoutes";
+import { CacheRoutes } from "./utils/CacheRoutes.tsx";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

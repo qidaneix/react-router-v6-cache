@@ -1,14 +1,12 @@
-import { useParams, useOutletContext } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function Invoice() {
   const params = useParams();
-  const baz = useOutletContext();
   return (
-    <>
+    <div style={{ margin: "auto" }}>
       <h2>Invoice {params.id}</h2>
-      <h5>{baz}</h5>
       子元素非受控：
       <input type="text" />
-    </>
+    </div>
   );
 }
