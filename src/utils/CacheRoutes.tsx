@@ -9,16 +9,18 @@ import { useCreateCache } from "./CreateCache.tsx";
 
 export function useCacheRoutes(
   routes: RouteObject[],
-  locationArg?: Partial<Location> | string
+  locationArg?: Partial<Location> | string,
+  excludes?: string[]
 ): React.ReactElement | null {
   const currentOutlet = useRoutes(routes, locationArg);
 
-  return useCreateCache(currentOutlet);
+  return useCreateCache(currentOutlet, excludes);
 }
 
 export function CacheRoutes({
   children,
   location,
-}: RoutesProps): React.ReactElement | null {
-  return useCacheRoutes(createRoutesFromChildren(children), location);
+  excludes,
+}: RoutesProps & { excludes?: string[] }): React.ReactElement | null {
+  return useCacheRoutes(createRoutesFromChildren(children), location, excludes);
 }

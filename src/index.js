@@ -13,7 +13,7 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <CacheRoutes>
+      <CacheRoutes excludes={["/expenses"]}>
         <Route path="/" element={<App />}>
           <Route path="expenses" element={<Expenses />} />
           <Route path="invoices" element={<Invoices />}>
